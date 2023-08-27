@@ -1,4 +1,5 @@
-import AWS = require('aws-sdk');
+const AWS = require("aws-sdk");
+require("aws-sdk/lib/maintenance_mode_message").suppress = true;
 import {config} from './config/config';
 
 
