@@ -18,12 +18,12 @@ script:
   - docker build -t udagram-reverseproxy ./udagram-reverseproxy
   - docker build -t udagram-api-feed ./udagram-api-feed
   - docker build -t udagram-api-user ./udagram-api-user
-  - docker build -t udagram-api-frontend ./udagram-api-frontend
+  - docker build -t udagram-frontend ./udagram-frontend
   #Tagging
   - docker tag udagram-reverseproxy beanreally/udagram-reverseproxy:v4a
   - docker tag udagram-api-feed beanreally/udagram-api-feed:v4a
   - docker tag udagram-api-user beanreally/udagram-api-user:v4a
-  - docker tag udagram-api-frontend beanreally/udagram-api-frontend:local
+  - docker tag udagram-frontend beanreally/udagram-frontend:v1
 
 # Tasks to perform after the process is successful. Formatting the Docker username and password as below enables you to programmatically log in without having the password exposed in logs.
 after_success:
@@ -31,4 +31,4 @@ after_success:
   - docker push beanreally/udagram-reverseproxy:v4a
   - docker push beanreally/udagram-api-feed:v4a
   - docker push beanreally/udagram-api-user:v4a
-  - docker push beanreally/udagram-api-frontend:local
+  - docker push beanreally/udagram-frontend:v1
